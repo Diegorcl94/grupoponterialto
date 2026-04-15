@@ -5,29 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grupo Ponterialto | Construcción y Facility Management</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-
-  <!-- Animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <!-- CSS propio -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
     <div class="container">
       <a class="navbar-brand" href="#inicio">
@@ -40,33 +30,20 @@
 
       <div class="collapse navbar-collapse" id="menuPrincipal">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item">
-            <a class="nav-link active" href="#inicio">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#servicios">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#nosotros">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#proyectos">Proyectos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#clientes">Clientes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#clientes">Clientes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
-            <a class="btn btn-main" href="#contacto">Solicitar cotización</a>
+            <a class="btn btn-main go-contact" href="#contacto">Solicitar cotización</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero-section" id="inicio">
     <div class="container hero-content">
       <div class="hero-badge animate__animated animate__fadeInDown">
@@ -74,16 +51,16 @@
       </div>
 
       <h1 class="animate__animated animate__fadeInUp">
-        Soluciones integrales para empresas que necesitan infraestructura física confiable y profesional.
+        Construcción y mantenimiento con estándar profesional.
       </h1>
 
       <p class="animate__animated animate__fadeInUp animate__delay-1s">
-        Grupo Ponterialto apoya a empresas e instituciones con proyectos de arquitectura, remodelación, construcción,
-        mantención y personal especializado. Este diseño es un boceto moderno con imágenes referenciales.
+        Soluciones integrales para empresas e instituciones con foco en infraestructura,
+        operación y continuidad de servicio.
       </p>
 
       <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-1s">
-        <a href="#contacto" class="btn btn-main btn-lg">Solicitar cotización</a>
+        <a href="#contacto" class="btn btn-main btn-lg go-contact">Solicitar cotización</a>
         <a href="https://wa.me/56942754305" target="_blank" class="btn btn-outline-light btn-lg btn-wsp-hero">
           <i class="bi bi-whatsapp me-2"></i>Hablar por WhatsApp
         </a>
@@ -95,7 +72,7 @@
           <span>de experiencia referencial</span>
         </div>
         <div class="hero-stat">
-          <strong>4 áreas</strong>
+          <strong>5 áreas</strong>
           <span>principales de servicio</span>
         </div>
         <div class="hero-stat">
@@ -106,7 +83,6 @@
     </div>
   </header>
 
-  <!-- SERVICIOS -->
   <section class="section section-light" id="servicios">
     <div class="container">
       <div class="section-heading text-center" data-aos="fade-up">
@@ -117,71 +93,142 @@
         </p>
       </div>
 
-      <div class="row g-4 mt-4">
-        <div class="col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="0">
-          <div class="service-card h-100">
+      <div class="row g-4 mt-4 justify-content-center">
+        <div class="col-md-6 col-xl-4" data-aos="zoom-in" data-aos-delay="0">
+          <div class="service-card h-100 service-card-enhanced">
             <img
               src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80"
-              alt="Arquitectura y diseño"
+              alt="Tecnología"
               class="service-img"
             />
             <div class="icon-box">
-              <i class="bi bi-rulers"></i>
+              <i class="bi bi-cpu"></i>
             </div>
-            <h3>Arquitectura y Diseño</h3>
-            <p>Desarrollo de proyectos de diseño, planificación técnica y soluciones para espacios corporativos y comerciales.</p>
+            <h3>Tecnología</h3>
+            <p>
+              Equipamiento RFID industrial, inteligencia de negocios, trazabilidad de activos e IA aplicada.
+              Transformamos datos en decisiones estratégicas en tiempo real.
+            </p>
+
+            <div class="service-card-footer">
+              <button
+                type="button"
+                class="btn service-more-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#modalTecnologia"
+              >
+                Conocer más
+                <i class="bi bi-arrow-up-right ms-2"></i>
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="100">
-          <div class="service-card h-100">
+        <div class="col-md-6 col-xl-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="service-card h-100 service-card-enhanced">
             <img
               src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80"
-              alt="Remodelación y construcción"
+              alt="Construcción"
               class="service-img"
             />
             <div class="icon-box">
               <i class="bi bi-building-gear"></i>
             </div>
-            <h3>Remodelación y Construcción</h3>
-            <p>Ejecución de obras, habilitaciones y remodelaciones para oficinas, industria, comercio y distintos tipos de instalaciones.</p>
+            <h3>Construcción</h3>
+            <p>
+              Habilitación de oficinas, obras civiles en terreno, construcción de bodegas y servicios
+              generales para operaciones continuas.
+            </p>
+
+            <div class="service-card-footer">
+              <a href="#contacto" class="btn service-more-btn service-more-btn-outline go-contact">
+                Solicitar cotización
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="200">
-          <div class="service-card h-100">
+        <div class="col-md-6 col-xl-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="service-card h-100 service-card-enhanced">
             <img
               src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80"
-              alt="Facility management"
+              alt="Ingeniería"
               class="service-img"
             />
             <div class="icon-box">
               <i class="bi bi-tools"></i>
             </div>
+            <h3>Ingeniería</h3>
+            <p>
+              Diseño y modelado 3D de piping, elaboración de P&amp;IDs, planos isométricos y mantención
+              evolutiva bajo normas para industrias de alto estándar.
+            </p>
+
+            <div class="service-card-footer">
+              <a href="#contacto" class="btn service-more-btn service-more-btn-outline go-contact">
+                Solicitar cotización
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-4 justify-content-center">
+        <div class="col-md-6 col-xl-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="service-card h-100 service-card-enhanced">
+            <img
+              src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=80"
+              alt="Facility Management"
+              class="service-img"
+            />
+            <div class="icon-box">
+              <i class="bi bi-buildings"></i>
+            </div>
             <h3>Facility Management</h3>
-            <p>Mantención preventiva y correctiva para apoyar la continuidad operativa y el correcto funcionamiento de sus espacios.</p>
+            <p>
+              Mantenimiento de la infraestructura existente para el normal funcionamiento de sus instalaciones.
+              Integramos gestión de espacios, soporte operativo y servicios complementarios para continuidad operacional.
+            </p>
+
+            <div class="service-card-footer">
+              <a href="#contacto" class="btn service-more-btn service-more-btn-outline go-contact">
+                Solicitar cotización
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-xl-3" data-aos="zoom-in" data-aos-delay="300">
-          <div class="service-card h-100">
+        <div class="col-md-6 col-xl-4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="service-card h-100 service-card-enhanced">
             <img
               src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80"
-              alt="Servicio de personal"
+              alt="Recursos Humanos"
               class="service-img"
             />
             <div class="icon-box">
               <i class="bi bi-people-fill"></i>
             </div>
-            <h3>Servicio de Personal</h3>
-            <p>Apoyo con personal técnico y multipropósito para tareas específicas de mantenimiento, operación y soporte en terreno.</p>
+            <h3>Recursos Humanos (RR.HH.)</h3>
+            <p>
+              Apoyo con personal técnico y multipropósito para tareas específicas de mantenimiento,
+              operación y soporte en terreno.
+            </p>
+
+            <div class="service-card-footer">
+              <a href="#contacto" class="btn service-more-btn service-more-btn-outline go-contact">
+                Solicitar cotización
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NOSOTROS -->
   <section class="section" id="nosotros">
     <div class="container">
       <div class="row align-items-center g-5">
@@ -239,7 +286,6 @@
     </div>
   </section>
 
-  <!-- PROYECTOS -->
   <section class="section section-soft" id="proyectos">
     <div class="container">
       <div class="section-heading text-center" data-aos="fade-up">
@@ -324,32 +370,62 @@
     </div>
   </section>
 
-  <!-- CLIENTES -->
   <section class="section section-light" id="clientes">
     <div class="container">
       <div class="section-heading text-center" data-aos="fade-up">
         <span class="section-tag">Clientes</span>
-        <h2 class="section-title">Espacio para logos o marcas con las que trabaja la empresa</h2>
+        <h2 class="section-title">Empresas e instituciones que han confiado en nuestro trabajo</h2>
+        <p class="section-text mx-auto">
+          Algunos de los clientes y organizaciones con las que hemos trabajado en distintos proyectos y servicios.
+        </p>
       </div>
 
-      <div class="row g-4 mt-4">
-        <div class="col-6 col-md-3" data-aos="zoom-in">
-          <div class="client-box">Cliente 1</div>
+      <div class="row g-4 mt-4 justify-content-center">
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in">
+          <div class="client-box">
+            <img src="img/Clientes/bes.png" alt="BES Arquitectura + Constructora" class="client-logo" />
+          </div>
         </div>
-        <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
-          <div class="client-box">Cliente 2</div>
+
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+          <div class="client-box">
+            <img src="img/Clientes/Cencosud_logo.svg.png" alt="Cencosud" class="client-logo" />
+          </div>
         </div>
-        <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
-          <div class="client-box">Cliente 3</div>
+
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+          <div class="client-box">
+            <img src="img/Clientes/EntelChile_Logo.svg.png" alt="Entel Chile" class="client-logo" />
+          </div>
         </div>
-        <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
-          <div class="client-box">Cliente 4</div>
+
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+          <div class="client-box">
+            <img src="img/Clientes/fe_logo.png" alt="FE Ingeniería y Construcciones" class="client-logo" />
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in">
+          <div class="client-box">
+            <img src="img/Clientes/Logo_UTEM.png" alt="Universidad Tecnológica Metropolitana" class="client-logo" />
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+          <div class="client-box">
+            <img src="img/Clientes/Logotipo_SISS_1.svg.png" alt="Superintendencia de Servicios Sanitarios" class="client-logo" />
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+          <div class="client-box">
+            <img src="img/Clientes/probit.png" alt="Probit" class="client-logo" />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="section cta-wrapper">
     <div class="container">
       <div class="cta-box text-center" data-aos="zoom-in-up">
@@ -360,7 +436,7 @@
         </p>
 
         <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-          <a href="#contacto" class="btn btn-light btn-lg cta-light-btn">Solicitar propuesta</a>
+          <a href="#contacto" class="btn btn-light btn-lg cta-light-btn go-contact">Solicitar cotización</a>
           <a href="https://wa.me/56942754305" target="_blank" class="btn btn-outline-light btn-lg cta-outline-btn">
             <i class="bi bi-whatsapp me-2"></i>WhatsApp
           </a>
@@ -369,7 +445,6 @@
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section class="section section-light" id="contacto">
     <div class="container">
       <div class="row g-4">
@@ -418,7 +493,7 @@
         </div>
 
         <div class="col-lg-7" data-aos="fade-left">
-          <div class="contact-card">
+          <div class="contact-card" id="formulario-contacto">
             <form>
               <div class="row g-3">
                 <div class="col-md-6">
@@ -447,7 +522,104 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <div class="modal fade modal-service" id="modalTecnologia" tabindex="-1" aria-labelledby="modalTecnologiaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content modal-service-content">
+        <div class="modal-header modal-service-header border-0">
+          <div>
+            <span class="modal-service-kicker">Grupo Ponterialto · Tecnología</span>
+            <h2 class="modal-title modal-service-title" id="modalTecnologiaLabel">Soluciones tecnológicas integrales</h2>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body p-0">
+          <div class="row g-0">
+            <div class="col-lg-5">
+              <div class="modal-service-visual">
+                <img
+                  src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+                  alt="Tecnología industrial"
+                />
+                <div class="modal-service-overlay"></div>
+                <div class="modal-service-badge">
+                  <span>Hardware • Software • Consultoría</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="modal-service-body">
+                <p class="modal-service-intro">
+                  Integramos soluciones tecnológicas para mejorar el control operativo, la trazabilidad
+                  y la toma de decisiones en entornos corporativos e industriales.
+                </p>
+
+                <div class="service-detail-block">
+                  <h4>Hardware</h4>
+                  <p>
+                    Equipamiento industrial y corporativo, lectores RFID, scanners, handhelds y dispositivos
+                    para trabajo en terreno.
+                  </p>
+                </div>
+
+                <div class="service-detail-block">
+                  <h4>Software</h4>
+                  <p>
+                    Aplicaciones de negocio, licenciamiento e integración de plataformas con soporte continuo.
+                  </p>
+                </div>
+
+                <div class="service-detail-block">
+                  <h4>Consultoría</h4>
+                  <p>
+                    Optimización de procesos, analítica de datos, automatización y desarrollo de soluciones a medida.
+                  </p>
+                </div>
+
+                <div class="service-detail-grid">
+                  <div class="service-mini-card">
+                    <span class="service-mini-label"><i class="bi bi-diagram-3 me-2"></i>Aplicaciones</span>
+                    <strong>RFID • BI • Trazabilidad • IA</strong>
+                    <p class="service-mini-text">Tecnologías orientadas a control, seguimiento y análisis en tiempo real.</p>
+                  </div>
+
+                  <div class="service-mini-card">
+                    <span class="service-mini-label"><i class="bi bi-award me-2"></i>Marcas referenciales</span>
+                    <strong>Unitech • Honeywell • TSC • Urovo</strong>
+                    <p class="service-mini-text">Equipamiento y soluciones reconocidas para entornos de alta exigencia.</p>
+                  </div>
+
+                  <div class="service-mini-card">
+                    <span class="service-mini-label"><i class="bi bi-bullseye me-2"></i>Enfoque</span>
+                    <strong>Continuidad operacional</strong>
+                    <p class="service-mini-text">Menos interrupciones, mayor eficiencia y mejor soporte para la operación.</p>
+                  </div>
+
+                  <div class="service-mini-card">
+                    <span class="service-mini-label"><i class="bi bi-graph-up-arrow me-2"></i>Valor</span>
+                    <strong>Datos convertidos en decisiones</strong>
+                    <p class="service-mini-text">Información útil para optimizar procesos y tomar decisiones con mayor precisión.</p>
+                  </div>
+                </div>
+
+                <div class="modal-service-actions">
+                  <a href="#contacto" class="btn btn-main go-contact">
+                    <i class="bi bi-send-fill me-2"></i>Solicitar cotización
+                  </a>
+                  <a href="https://wa.me/56942754305" target="_blank" class="btn btn-outline-primary modal-outline-btn">
+                    <i class="bi bi-whatsapp me-2"></i>Hablar por WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container footer-content">
       <div>
@@ -464,14 +636,59 @@
     </div>
   </footer>
 
-  <!-- BOTON FLOTANTE WHATSAPP -->
   <a href="https://wa.me/56942754305" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
     <i class="bi bi-whatsapp"></i>
   </a>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/main.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const botonesContacto = document.querySelectorAll(".go-contact");
+      const destino = document.querySelector("#formulario-contacto");
+
+      function irAlFormulario() {
+        if (!destino) return;
+
+        const navbar = document.querySelector(".custom-navbar");
+        const offset = navbar ? navbar.offsetHeight + 20 : 100;
+        const top = destino.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: top,
+          behavior: "smooth"
+        });
+      }
+
+      botonesContacto.forEach((boton) => {
+        boton.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const modalAbierto = document.querySelector(".modal.show");
+
+          if (modalAbierto) {
+            const instanciaModal = bootstrap.Modal.getInstance(modalAbierto) || new bootstrap.Modal(modalAbierto);
+            modalAbierto.addEventListener(
+              "hidden.bs.modal",
+              function handler() {
+                irAlFormulario();
+                modalAbierto.removeEventListener("hidden.bs.modal", handler);
+              },
+              { once: true }
+            );
+            instanciaModal.hide();
+          } else {
+            irAlFormulario();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
