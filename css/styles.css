@@ -10,16 +10,22 @@
   --border: #e8eef6;
   --shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   --shadow-strong: 0 20px 45px rgba(10, 39, 64, 0.22);
+  --vh: 1vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  min-width: 0;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
@@ -27,24 +33,64 @@ body {
   color: var(--text);
   background: var(--white);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
-img {
+html.menu-open,
+body.menu-open {
+  overflow: hidden;
+}
+
+body.modal-open-custom {
+  overscroll-behavior: none;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
   max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container,
+.container-fluid,
+.row,
+[class*="col-"] {
+  max-width: 100%;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  touch-action: manipulation;
 }
 
 .custom-navbar {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
   padding: 16px 0;
-  z-index: 1100;
+  z-index: 1200;
 }
 
 .custom-navbar.scrolled {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 10px 0;
+}
+
+.nav-shell {
+  position: relative;
+  z-index: 2;
 }
 
 .navbar-brand {
@@ -53,7 +99,7 @@ img {
   color: var(--primary-dark) !important;
   letter-spacing: -0.03em;
   position: relative;
-  z-index: 1200;
+  z-index: 1202;
 }
 
 .navbar-brand span {
@@ -92,15 +138,17 @@ img {
 
 .navbar-toggler {
   border: 1px solid rgba(11, 94, 215, 0.18);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 10px;
   background: #ffffff !important;
   box-shadow: 0 8px 18px rgba(10, 39, 64, 0.08);
   position: relative;
-  z-index: 1200;
+  z-index: 1202;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 50px;
+  min-height: 50px;
 }
 
 .navbar-toggler:focus {
@@ -135,11 +183,13 @@ img {
 
 .hero-section {
   min-height: 100vh;
+  min-height: calc(var(--vh) * 100);
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: clip;
   background: #0a2740;
+  isolation: isolate;
 }
 
 .hero-carousel,
@@ -175,8 +225,8 @@ img {
   position: relative;
   z-index: 3;
   color: #fff;
-  padding-top: 110px;
-  padding-bottom: 70px;
+  padding-top: 120px;
+  padding-bottom: 72px;
 }
 
 .hero-badge {
@@ -189,6 +239,7 @@ img {
   font-weight: 700;
   margin-bottom: 20px;
   backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .hero-intro {
@@ -217,6 +268,7 @@ img {
   line-height: 1.05;
   max-width: 840px;
   margin-bottom: 18px;
+  text-wrap: balance;
 }
 
 .hero-description {
@@ -234,6 +286,7 @@ img {
 
 .section {
   padding: 95px 0;
+  overflow-x: clip;
 }
 
 .section-light {
@@ -264,6 +317,7 @@ img {
   color: var(--primary-dark);
   margin-bottom: 14px;
   line-height: 1.15;
+  text-wrap: balance;
 }
 
 .section-title-xl {
@@ -299,6 +353,7 @@ img {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .service-card::before {
@@ -331,6 +386,7 @@ img {
   color: var(--primary);
   font-size: 1.35rem;
   margin-bottom: 16px;
+  flex-shrink: 0;
 }
 
 .service-card h3 {
@@ -429,6 +485,7 @@ img {
   gap: 22px;
   width: max-content;
   animation: marquee 32s linear infinite;
+  will-change: transform;
 }
 
 .clients-marquee:hover .clients-track {
@@ -456,6 +513,7 @@ img {
   padding: 22px 20px;
   box-shadow: var(--shadow);
   transition: 0.3s ease;
+  flex-shrink: 0;
 }
 
 .client-box:hover {
@@ -482,6 +540,7 @@ img {
   padding: 32px;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
+  overflow: hidden;
 }
 
 .contact-item {
@@ -496,6 +555,7 @@ img {
   color: var(--primary);
   font-size: 1.2rem;
   margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .contact-item strong {
@@ -519,7 +579,6 @@ textarea.form-control {
   resize: none;
 }
 
-/* FOOTER NUEVO */
 .site-footer {
   background: linear-gradient(180deg, #082742 0%, #07233b 100%);
   color: #fff;
@@ -686,6 +745,7 @@ textarea.form-control {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #fff;
   font-size: 0.92rem;
   font-weight: 600;
@@ -697,9 +757,10 @@ textarea.form-control {
 }
 
 .modal-service .modal-body {
-  overflow: hidden;
+  overflow: auto;
   min-height: 0;
   flex: 1 1 auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-service .row {
@@ -765,7 +826,7 @@ textarea.form-control {
   place-items: center;
   text-decoration: none;
   font-size: 1.8rem;
-  z-index: 1000;
+  z-index: 1100;
   box-shadow: 0 14px 28px rgba(37, 211, 102, 0.32);
 }
 
@@ -776,16 +837,12 @@ textarea.form-control {
 }
 
 @media (max-width: 991px) {
-  .custom-navbar {
-    background: #ffffff !important;
-    backdrop-filter: none;
-    box-shadow: 0 10px 26px rgba(10, 39, 64, 0.10);
-    padding: 12px 0;
-  }
-
+  .custom-navbar,
   .custom-navbar.scrolled {
     background: #ffffff !important;
-    box-shadow: 0 10px 26px rgba(10, 39, 64, 0.10);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: 0 10px 26px rgba(10, 39, 64, 0.1);
     padding: 12px 0;
   }
 
@@ -809,12 +866,25 @@ textarea.form-control {
   }
 
   #menuPrincipal {
+    position: fixed;
+    top: 76px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: none;
     background: rgba(255, 255, 255, 0.99);
-    margin-top: 14px;
     padding: 16px;
     border-radius: 20px;
     box-shadow: 0 16px 36px rgba(10, 39, 64, 0.14);
     border: 1px solid #e6edf6;
+    max-height: calc(100dvh - 96px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1201;
+  }
+
+  #menuPrincipal.mobile-show {
+    display: block;
   }
 
   #menuPrincipal .navbar-nav {
@@ -865,7 +935,12 @@ textarea.form-control {
 
   .modal-service .modal-dialog {
     max-width: calc(100% - 20px);
-    margin: 30px auto 14px;
+    margin: 18px auto;
+  }
+
+  .modal-service-content {
+    max-height: calc(100dvh - 36px);
+    border-radius: 22px;
   }
 
   .modal-service-visual {
@@ -879,10 +954,6 @@ textarea.form-control {
 
   .modal-service-header {
     padding: 16px 16px 12px;
-  }
-
-  .modal-service-content {
-    max-height: calc(100dvh - 54px);
   }
 
   .modal-service-actions {
@@ -934,16 +1005,32 @@ textarea.form-control {
   .clients-marquee {
     mask-image: none;
     -webkit-mask-image: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .clients-marquee::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .clients-marquee::-webkit-scrollbar-thumb {
+    background: rgba(10, 39, 64, 0.2);
+    border-radius: 999px;
   }
 
   .clients-track {
     gap: 16px;
-    animation-duration: 40s;
+    animation: none;
+    padding-right: 16px;
   }
 
   .client-box {
     min-width: 190px;
     min-height: 100px;
+    scroll-snap-align: start;
   }
 
   .client-logo {
@@ -962,6 +1049,11 @@ textarea.form-control {
     min-width: 0;
     word-break: break-word;
   }
+
+  .whatsapp-float {
+    right: calc(14px + env(safe-area-inset-right));
+    bottom: calc(14px + env(safe-area-inset-bottom));
+  }
 }
 
 @media (max-width: 575px) {
@@ -970,8 +1062,18 @@ textarea.form-control {
     max-width: calc(100% - 68px);
   }
 
+  .navbar-toggler {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 9px;
+  }
+
   #menuPrincipal {
+    top: 72px;
+    left: 10px;
+    right: 10px;
     padding: 12px;
+    max-height: calc(100dvh - 84px);
   }
 
   .hero-section h1 {
@@ -997,6 +1099,16 @@ textarea.form-control {
   .contact-card,
   .about-box {
     padding: 20px;
+  }
+
+  .about-box,
+  .contact-card,
+  .service-card {
+    border-radius: 20px;
+  }
+
+  .service-img {
+    height: 210px;
   }
 
   .site-footer {
@@ -1033,12 +1145,48 @@ textarea.form-control {
     max-height: 52px;
   }
 
+  .modal-service .modal-dialog {
+    max-width: calc(100% - 14px);
+    margin: 10px auto;
+  }
+
+  .modal-service-content {
+    max-height: calc(100dvh - 20px);
+    border-radius: 18px;
+  }
+
+  .modal-service-header {
+    padding: 14px 14px 10px;
+  }
+
+  .modal-service-title {
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+
+  .modal-service-body {
+    padding: 14px 14px 16px;
+  }
+
+  .modal-service-visual {
+    aspect-ratio: 16 / 9;
+    min-height: 150px;
+  }
+
+  .modal-service-badge {
+    left: 12px;
+    bottom: 12px;
+  }
+
+  .modal-service-badge span {
+    font-size: 0.82rem;
+    padding: 7px 10px;
+  }
+
   .whatsapp-float {
     width: 56px;
     height: 56px;
     font-size: 1.6rem;
-    right: calc(14px + env(safe-area-inset-right));
-    bottom: calc(14px + env(safe-area-inset-bottom));
   }
 }
 
@@ -1088,29 +1236,8 @@ textarea.form-control {
     font-size: 1.05rem;
   }
 
-  .clients-track {
-    gap: 12px;
-    animation: none;
-  }
-
-  .clients-marquee {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 6px;
-  }
-
-  .clients-marquee::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .clients-marquee::-webkit-scrollbar-thumb {
-    background: rgba(10, 39, 64, 0.25);
-    border-radius: 999px;
-  }
-
   .client-box {
-    min-width: 142px;
+    min-width: 150px;
     min-height: 84px;
     padding: 14px 12px;
   }
