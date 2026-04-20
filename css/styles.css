@@ -671,53 +671,43 @@ textarea.form-control {
 }
 
 .modal-service .modal-dialog {
-  max-width: min(1180px, calc(100vw - 24px));
-  margin: 56px auto 28px;
+  max-width: min(920px, calc(100vw - 32px));
+  margin: 18px auto;
 }
 
 .modal-service .modal-dialog-centered {
-  align-items: flex-start;
-  min-height: calc(100% - 3rem);
+  align-items: center;
+  min-height: calc(100% - 1.5rem);
 }
 
 .modal-service-content {
   border: none;
-  border-radius: 24px;
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
   background: #ffffff;
-  max-height: calc(100dvh - 96px);
+  max-height: min(82vh, 760px);
   display: flex;
   flex-direction: column;
 }
 
 .modal-service-header {
-  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-  padding: 18px 24px 14px;
-  color: #fff;
+  display: none;
 }
 
-.modal-service-kicker {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.75;
-  margin-bottom: 4px;
-}
-
-.modal-service-title {
-  font-size: clamp(1.3rem, 2.2vw, 2rem);
-  font-weight: 800;
-  margin: 0;
+.modal-service .modal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  flex: 1 1 auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-service-visual {
   position: relative;
-  height: 100%;
-  min-height: 0;
-  aspect-ratio: 4 / 4.8;
+  width: 100%;
+  min-height: 180px;
+  max-height: 220px;
   overflow: hidden;
 }
 
@@ -730,13 +720,37 @@ textarea.form-control {
 .modal-service-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(10, 39, 64, 0.75), rgba(10, 39, 64, 0.15));
+  background: linear-gradient(to top, rgba(10, 39, 64, 0.65), rgba(10, 39, 64, 0.08));
+}
+
+.modal-floating-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--primary-dark);
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  z-index: 5;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.modal-floating-close:hover {
+  transform: scale(1.05);
+  background: #ffffff;
 }
 
 .modal-service-badge {
   position: absolute;
-  left: 18px;
-  bottom: 18px;
+  left: 14px;
+  bottom: 14px;
+  z-index: 4;
 }
 
 .modal-service-badge span {
@@ -745,36 +759,19 @@ textarea.form-control {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   color: #fff;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .modal-service-body {
-  padding: 22px 24px 20px;
-}
-
-.modal-service .modal-body {
-  overflow: auto;
-  min-height: 0;
-  flex: 1 1 auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.modal-service .row {
-  min-height: 0;
-}
-
-.modal-service .col-lg-5,
-.modal-service .col-lg-7 {
-  min-height: 0;
+  padding: 18px 18px 20px;
 }
 
 .modal-service-intro {
-  font-size: 0.94rem;
-  line-height: 1.55;
+  font-size: 0.96rem;
+  line-height: 1.6;
   color: var(--muted);
   margin-bottom: 14px;
 }
@@ -795,15 +792,15 @@ textarea.form-control {
 .service-detail-block p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.5;
-  font-size: 0.93rem;
+  line-height: 1.55;
+  font-size: 0.94rem;
 }
 
 .modal-service-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .modal-outline-btn {
@@ -811,6 +808,86 @@ textarea.form-control {
   font-weight: 700;
   padding: 10px 16px;
   font-size: 0.95rem;
+}
+
+/* esconder WhatsApp cuando el modal este abierto */
+.modal.show ~ .whatsapp-float {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+@media (max-width: 991px) {
+  .modal-service .modal-dialog {
+    max-width: calc(100% - 14px);
+    margin: 8px auto;
+  }
+
+  .modal-service-content {
+    max-height: calc(78vh);
+    border-radius: 18px;
+  }
+
+  .modal-service-visual {
+    min-height: 145px;
+    max-height: 170px;
+  }
+
+  .modal-service-body {
+    padding: 14px;
+  }
+
+  .modal-service-actions {
+    flex-direction: column;
+  }
+
+  .modal-service-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal-service .modal-dialog {
+    max-width: calc(100% - 8px);
+    margin: 4px auto;
+  }
+
+  .modal-service-content {
+    max-height: 74vh;
+    border-radius: 16px;
+  }
+
+  .modal-service-visual {
+    min-height: 125px;
+    max-height: 145px;
+  }
+
+  .modal-floating-close {
+    width: 38px;
+    height: 38px;
+    top: 10px;
+    right: 10px;
+    font-size: 0.9rem;
+  }
+
+  .modal-service-badge {
+    left: 10px;
+    bottom: 10px;
+  }
+
+  .modal-service-badge span {
+    font-size: 0.82rem;
+    padding: 7px 10px;
+  }
+
+  .modal-service-body {
+    padding: 12px;
+  }
+
+  .modal-service-intro,
+  .service-detail-block p {
+    font-size: 0.92rem;
+  }
 }
 
 .whatsapp-float {
@@ -933,37 +1010,6 @@ textarea.form-control {
     min-height: 320px;
   }
 
-  .modal-service .modal-dialog {
-    max-width: calc(100% - 20px);
-    margin: 18px auto;
-  }
-
-  .modal-service-content {
-    max-height: calc(100dvh - 36px);
-    border-radius: 22px;
-  }
-
-  .modal-service-visual {
-    aspect-ratio: 16 / 8.5;
-    min-height: 180px;
-  }
-
-  .modal-service-body {
-    padding: 16px 16px 18px;
-  }
-
-  .modal-service-header {
-    padding: 16px 16px 12px;
-  }
-
-  .modal-service-actions {
-    flex-direction: column;
-  }
-
-  .modal-service-actions .btn {
-    width: 100%;
-  }
-
   .footer-top {
     flex-direction: column;
     align-items: flex-start;
@@ -1005,26 +1051,24 @@ textarea.form-control {
   .clients-marquee {
     mask-image: none;
     -webkit-mask-image: none;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding-bottom: 8px;
-    scroll-snap-type: x proximity;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .clients-marquee::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .clients-marquee::-webkit-scrollbar-thumb {
-    background: rgba(10, 39, 64, 0.2);
-    border-radius: 999px;
+    overflow: hidden;
+    padding-bottom: 0;
   }
 
   .clients-track {
     gap: 16px;
-    animation: none;
-    padding-right: 16px;
+    animation: marqueeMobile 18s linear infinite;
+    padding-right: 0;
+    width: max-content;
+  }
+
+  @keyframes marqueeMobile {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   .client-box {
@@ -1145,44 +1189,6 @@ textarea.form-control {
     max-height: 52px;
   }
 
-  .modal-service .modal-dialog {
-    max-width: calc(100% - 14px);
-    margin: 10px auto;
-  }
-
-  .modal-service-content {
-    max-height: calc(100dvh - 20px);
-    border-radius: 18px;
-  }
-
-  .modal-service-header {
-    padding: 14px 14px 10px;
-  }
-
-  .modal-service-title {
-    font-size: 1.15rem;
-    line-height: 1.2;
-  }
-
-  .modal-service-body {
-    padding: 14px 14px 16px;
-  }
-
-  .modal-service-visual {
-    aspect-ratio: 16 / 9;
-    min-height: 150px;
-  }
-
-  .modal-service-badge {
-    left: 12px;
-    bottom: 12px;
-  }
-
-  .modal-service-badge span {
-    font-size: 0.82rem;
-    padding: 7px 10px;
-  }
-
   .whatsapp-float {
     width: 56px;
     height: 56px;
@@ -1234,6 +1240,16 @@ textarea.form-control {
 
   .contact-item i {
     font-size: 1.05rem;
+  }
+
+  .clients-track {
+    gap: 12px;
+    animation: marqueeMobile 18s linear infinite;
+  }
+
+  .clients-marquee {
+    overflow: hidden;
+    padding-bottom: 0;
   }
 
   .client-box {

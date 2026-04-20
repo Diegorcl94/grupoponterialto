@@ -612,7 +612,7 @@
     data-bs-backdrop="true"
     data-bs-keyboard="true"
   >
-    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
       <div class="modal-content modal-service-content">
         <div class="modal-header modal-service-header border-0">
           <div>
@@ -633,6 +633,16 @@
               <div class="modal-service-visual">
                 <img id="modalServiceImage" src="" alt="Servicio" />
                 <div class="modal-service-overlay"></div>
+
+                <button
+                  type="button"
+                  class="modal-floating-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Cerrar"
+                >
+                  <i class="bi bi-x-lg"></i>
+                </button>
+
                 <div class="modal-service-badge">
                   <span id="modalServiceBadge">Soluciones integrales</span>
                 </div>
