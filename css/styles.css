@@ -448,12 +448,12 @@ img {
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 22px;
-  min-height: 110px;
-  min-width: 210px;
+  min-height: 118px;
+  min-width: 228px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 18px;
+  padding: 22px 20px;
   box-shadow: var(--shadow);
   transition: 0.3s ease;
 }
@@ -465,11 +465,15 @@ img {
 
 .client-logo {
   max-width: 100%;
-  max-height: 55px;
+  max-height: 66px;
   width: auto;
   height: auto;
   object-fit: contain;
   transition: 0.3s ease;
+}
+
+.client-logo-antofagasta {
+  max-height: 74px;
 }
 
 .contact-card {
@@ -608,35 +612,44 @@ textarea.form-control {
 }
 
 .modal-service .modal-dialog {
-  max-width: 1180px;
+  max-width: min(1180px, calc(100vw - 24px));
+  margin: 56px auto 28px;
+}
+
+.modal-service .modal-dialog-centered {
+  align-items: flex-start;
+  min-height: calc(100% - 3rem);
 }
 
 .modal-service-content {
   border: none;
-  border-radius: 28px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18);
   background: #ffffff;
+  max-height: calc(100dvh - 96px);
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-service-header {
   background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-  padding: 28px 30px 22px;
+  padding: 18px 24px 14px;
   color: #fff;
 }
 
 .modal-service-kicker {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   opacity: 0.75;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .modal-service-title {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
   font-weight: 800;
   margin: 0;
 }
@@ -644,7 +657,8 @@ textarea.form-control {
 .modal-service-visual {
   position: relative;
   height: 100%;
-  min-height: 520px;
+  min-height: 0;
+  aspect-ratio: 4 / 4.8;
   overflow: hidden;
 }
 
@@ -662,62 +676,80 @@ textarea.form-control {
 
 .modal-service-badge {
   position: absolute;
-  left: 28px;
-  bottom: 28px;
+  left: 18px;
+  bottom: 18px;
 }
 
 .modal-service-badge span {
   display: inline-block;
-  padding: 10px 14px;
+  padding: 8px 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(8px);
   color: #fff;
+  font-size: 0.92rem;
   font-weight: 600;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .modal-service-body {
-  padding: 34px 30px 34px;
+  padding: 22px 24px 20px;
+}
+
+.modal-service .modal-body {
+  overflow: hidden;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+
+.modal-service .row {
+  min-height: 0;
+}
+
+.modal-service .col-lg-5,
+.modal-service .col-lg-7 {
+  min-height: 0;
 }
 
 .modal-service-intro {
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 0.94rem;
+  line-height: 1.55;
   color: var(--muted);
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 .service-detail-block {
-  padding: 0 0 18px;
+  padding: 0 0 12px;
   border-bottom: 1px solid #e8eef6;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .service-detail-block h4 {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--primary-dark);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .service-detail-block p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.5;
+  font-size: 0.93rem;
 }
 
 .modal-service-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 .modal-outline-btn {
   border-radius: 14px;
   font-weight: 700;
-  padding: 12px 20px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
 }
 
 .whatsapp-float {
@@ -833,19 +865,24 @@ textarea.form-control {
 
   .modal-service .modal-dialog {
     max-width: calc(100% - 20px);
-    margin: 10px auto;
+    margin: 30px auto 14px;
   }
 
   .modal-service-visual {
-    min-height: 280px;
+    aspect-ratio: 16 / 8.5;
+    min-height: 180px;
   }
 
   .modal-service-body {
-    padding: 22px 18px 24px;
+    padding: 16px 16px 18px;
   }
 
   .modal-service-header {
-    padding: 20px 18px 16px;
+    padding: 16px 16px 12px;
+  }
+
+  .modal-service-content {
+    max-height: calc(100dvh - 54px);
   }
 
   .modal-service-actions {
@@ -905,12 +942,16 @@ textarea.form-control {
   }
 
   .client-box {
-    min-width: 180px;
-    min-height: 96px;
+    min-width: 190px;
+    min-height: 100px;
   }
 
   .client-logo {
-    max-height: 45px;
+    max-height: 50px;
+  }
+
+  .client-logo-antofagasta {
+    max-height: 56px;
   }
 
   .contact-item {
@@ -985,7 +1026,11 @@ textarea.form-control {
   }
 
   .client-box {
-    min-width: 160px;
+    min-width: 170px;
+  }
+
+  .client-logo-antofagasta {
+    max-height: 52px;
   }
 
   .whatsapp-float {
